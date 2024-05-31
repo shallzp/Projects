@@ -11,6 +11,13 @@ genre_data = { genre :
         {id : 878 , name : "Sci-fi"},
         {id : 53 , name : "Thriller"},
         {id : 37 , name : "Western"},
+        {id : 99 , name : "Documentary"},
+        {id : 36 , name : "History"},
+        {id : 10752 , name : "War"},
+        {id : 10402 , name : "Music"},
+        {id : 10749 , name : "Romance"},
+        {id : 27 , name : "Horror"},
+        {id : 10770 , name : "TV movie"},
         {id : 12 , name : "Adventure"}
     ]
 };
