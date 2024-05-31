@@ -1,0 +1,54 @@
+function init() {
+    fetchAndBuildAllSections();
+}
+
+function fetchAndBuildAllSections() {
+    const categories = genre_data["genre"];
+    if(Array.isArray(categories) && categories.length) {
+        categories.forEach(category => {
+            fetchMovie(category);
+        })
+    }
+}
+
+function getMoviesByGenreId(genreId) {
+    //results
+    return tmdb_example.results.filter(movie => movie.genre_ids.includes(genreId));
+}
+
+function fetchMovie(category) {
+    const category_id = category["id"];
+    const category_name = category["name"];
+
+    const movies = getMoviesByGenreId(category_id);
+    if(Array.isArray(movies) && movies.length) {
+        buildMovieSection(movies, category_name);
+    }
+}
+
+function buildMovieSection(list, category_name) {
+    console.log(list, category_name);
+
+    const movieListHTML = list.map(item => {
+        return `
+        <div class="movie-item">
+            <img src="${item.backdrop_path}" alt="${item.title}">
+        </div>
+        `;
+    }).join(''); 
+
+    const movieSectionHTML = `
+    <div class="movie-section">
+        <h2 class="movie-section-heading">${category_name} <span class="explore-nudge">Explore All</span></h2>
+        <div class="movie-row">
+            ${movieListHTML}
+        </div>
+    </div>
+    `;
+
+    $("#movie-section").append(movieSectionHTML);
+}
+
+$(document).ready(() => {
+   init(); 
+});

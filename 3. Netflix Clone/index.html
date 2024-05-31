@@ -5,10 +5,10 @@
     <title>Netflix Clone</title>
 </head>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="./style.css">
 
 <body>
-    <header>
+    <div id="header">
         <nav class="navbar container">
             <div class="navbar-logo">
                 <img src="./images/netflix_logo.png" class="netflix-logo">
@@ -32,11 +32,27 @@
                 </ul>
             </div>
         </nav>
-    </header>
+    </div>
 
-    <div class="main-body"></div>
+    <div class="main-body movie container" id="movie-section">
+        <!-- <div class="movie-section">
+            <h2 class="movie-section-heading">Trending Now
+                <span class="explore-nudge">Explore All</span>
+                <img src="./images/icons/next.png" class="explore-nudge">
+            </h2>
+            <div class="movie-row">
+                <div class="movie-item"><img src="..." alt="..."></div>
+                <div class="movie-item"><img src="..." alt="..."></div>
+                <div class="movie-item"><img src="..." alt="..."></div>
+                <div class="movie-item"><img src="..." alt="..."></div>
+                <div class="movie-item"><img src="..." alt="..."></div>
+            </div>
+        </div> -->
+    </div>
     
-    <!-- jquery -->
-    <script type="Text/JavaScript" src="script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="Text/JavaScript" src="./data/genre.js"></script>
+    <script type="Text/JavaScript" src="./data/data.js"></script>
+    <script type="Text/JavaScript" src="./script.js"></script>
 </body>
 </html>
