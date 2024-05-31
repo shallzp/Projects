@@ -12,7 +12,7 @@ tmdb_example = { page : 1,
             vote_count : 1055,
             video : false,
             vote_average : 8.05,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/star-war.jpg"
             },
             {  
             adult : false,
@@ -27,7 +27,7 @@ tmdb_example = { page : 1,
             vote_count : 2063,
             video : false,
             vote_average : 6.88,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/ant-man.jpg"
          },
          {  
             adult : false,
@@ -42,7 +42,7 @@ tmdb_example = { page : 1,
             vote_count : 3272,
             video : false,
             vote_average : 6.79,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/jurassic-world.jpg"
          },
          {  
             adult : false,
@@ -57,7 +57,7 @@ tmdb_example = { page : 1,
             vote_count : 1392,
             video : false,
             vote_average : 7.64,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-martian.jpg"
          },
          {  
             adult : false,
@@ -72,7 +72,7 @@ tmdb_example = { page : 1,
             vote_count : 3018,
             video : false,
             vote_average : 7.53,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/mad-max.jpg"
          },
          {  
             adult : false,
@@ -87,7 +87,7 @@ tmdb_example = { page : 1,
             vote_count : 1438,
             video : false,
             vote_average : 7.15,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/mission-impossible.jpeg"
          },
          {  
             adult : false,
@@ -102,7 +102,7 @@ tmdb_example = { page : 1,
             vote_count : 1900,
             video : false,
             vote_average : 6.76,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/minions.jpg"
          },
          {  
             adult : false,
@@ -117,7 +117,7 @@ tmdb_example = { page : 1,
             vote_count : 1503,
             video : false,
             vote_average : 6.16,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/terminator.jpg"
          },
          {  
             adult : false,
@@ -132,7 +132,7 @@ tmdb_example = { page : 1,
             vote_count : 1224,
             video : false,
             vote_average : 6.32,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/spectre.jpg"
          },
          {  
             adult : false,
@@ -147,7 +147,7 @@ tmdb_example = { page : 1,
             vote_count : 720,
             video : false,
             vote_average : 6.98,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-hunger-games(2).jpg"
          },
          {  
             adult : false,
@@ -162,7 +162,7 @@ tmdb_example = { page : 1,
             vote_count : 665,
             video : false,
             vote_average : 7.25,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/southpaw.jpg"
          },
          {  
             adult : false,
@@ -177,7 +177,7 @@ tmdb_example = { page : 1,
             vote_count : 3884,
             video : false,
             vote_average : 8.28,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/interstellar.jpg"
          },
          {  
             adult : false,
@@ -192,7 +192,7 @@ tmdb_example = { page : 1,
             vote_count : 2705,
             video : false,
             vote_average : 7.86,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/big-hero-6.jpg"
          },
          {  
             adult : false,
@@ -207,7 +207,7 @@ tmdb_example = { page : 1,
             vote_count : 65,
             video : false,
             vote_average : 5.96,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-revenant.jpg"
          },
          {  
             adult : false,
@@ -222,7 +222,7 @@ tmdb_example = { page : 1,
             vote_count : 2064,
             video : false,
             vote_average : 8.07,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/inside-out.jpg"
          },
          {  
             adult : false,
@@ -237,7 +237,7 @@ tmdb_example = { page : 1,
             vote_count : 2195,
             video : false,
             vote_average : 7.17,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-hobbit.jpg"
          },
          {  
             adult : false,
@@ -252,7 +252,7 @@ tmdb_example = { page : 1,
             vote_count : 68,
             video : false,
             vote_average : 5.93,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-hateful-8.jpg"
          },
          {  
             adult : false,
@@ -267,7 +267,7 @@ tmdb_example = { page : 1,
             vote_count : 2247,
             video : false,
             vote_average : 6.92,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/the-hunger-games(1).jpg"
          },
          {  
             adult : false,
@@ -282,7 +282,7 @@ tmdb_example = { page : 1,
             vote_count : 2863,
             video : false,
             vote_average : 7.53,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/age-of-ultron.jpg"
          },
          {  
             adult : false,
@@ -297,7 +297,7 @@ tmdb_example = { page : 1,
             vote_count : 423,
             video : false,
             vote_average : 6.68,
-            backdrop_path : "./data/backdrops/star-war (2).jpg"
+            backdrop_path : "./data/backdrops/everest.jpg"
        }
     ],
    total_results : 249244,
