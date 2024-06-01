@@ -553,5 +553,4 @@ tmdb_example = { results : [{
             vote_average : 8.9,
             backdrop_path : "./data/backdrops/friends.jpg"
          }
-     ],
-   }
+     ]}

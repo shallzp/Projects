@@ -1,5 +1,4 @@
-tmdb_example = { page : 1,
-    results : [{  
+trending = { results : [{  
        adult : false,
        overview : "Thirty years after defeating the Galactic Empire, Han Solo and his allies face a new threat from the evil Kylo Ren and his army of Stormtroopers.",
        release_date : "2015-12-18",
@@ -134,7 +133,4 @@ tmdb_example = { page : 1,
          vote_average : 8.9,
          backdrop_path : "./data/backdrops/friends.jpg"
       }
-],
-total_results : 249244,
-total_pages : 12463
-};
+]};
