@@ -1,7 +1,39 @@
 function init() {
-    buildMovieSection(trending.results, "Trending Now");
+    fetchAndBuildTrending();
     fetchAndBuildAllSections();
 }
+
+function buildBanner(movie) {
+    $("#banner-section").css("background-image", `url(${movie.banner})`);
+
+    const bannerSectionHTML = `
+    <div class="banner-content container">
+        <h2 class="banner-title">${movie.title}</h2>
+        <p class="banner-info">#4 in TV Shows Today</p>
+        <p class="banner-overview">${movie.overview}</p>
+        <div class="action-buttons">
+            <button class="action"><img src="./images/icons/play.png">Play</button>
+            <button class="action"><img src="./images/icons/info.png">More Info</button>
+        </div>
+    </div>
+    `;
+
+    $("#banner-section").append(bannerSectionHTML);
+}
+
+//returns result array with popularity than threshold 
+function getMoviesByPopularity(threshold) {
+    return tmdb_example.results.filter(movie => movie.popularity > threshold);
+}
+
+function fetchAndBuildTrending() {
+    trending = getMoviesByPopularity(80);
+    buildMovieSection(trending, "Trending Now");
+
+    const randomIndex = Math.floor(Math.random() * trending.length);
+    buildBanner(trending[randomIndex]);
+}
+
 
 //fetches each genres and builds sections for it
 function fetchAndBuildAllSections() {
@@ -55,4 +87,8 @@ function buildMovieSection(list, category_name) {
 
 $(document).ready(() => {
    init(); 
+   $(window).scroll(() => {
+    if (window.scrollY >5)
+        $("#header").addClass("black-bg");
+   })
 });

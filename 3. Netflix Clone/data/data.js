@@ -11,8 +11,9 @@ tmdb_example = { results : [{
             vote_count : 1055,
             video : false,
             vote_average : 8.05,
-            backdrop_path : "./data/backdrops/star-war.jpg"
-            },
+            backdrop_path : "./data/backdrops/star-war.jpg",
+            banner : "./data/banner/.jpg"   
+         },
             {  
             adult : false,
             overview : "Armed with the astonishing ability to shrink in scale but increase in strength, con-man Scott Lang must embrace his inner-hero and help his mentor, Dr. Hank Pym, protect the secret behind his spectacular Ant-Man suit from a new generation of towering threats. Against seemingly insurmountable obstacles, Pym and Lang must plan and pull off a heist that will save the world.",
@@ -27,6 +28,7 @@ tmdb_example = { results : [{
             video : false,
             vote_average : 6.88,
             backdrop_path : "./data/backdrops/ant-man.jpg"
+  ,             banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -41,7 +43,8 @@ tmdb_example = { results : [{
             vote_count : 3272,
             video : false,
             vote_average : 6.79,
-            backdrop_path : "./data/backdrops/jurassic-world.jpg"
+            backdrop_path : "./data/backdrops/jurassic-world.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -56,7 +59,8 @@ tmdb_example = { results : [{
             vote_count : 1392,
             video : false,
             vote_average : 7.64,
-            backdrop_path : "./data/backdrops/the-martian.jpg"
+            backdrop_path : "./data/backdrops/the-martian.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -71,7 +75,8 @@ tmdb_example = { results : [{
             vote_count : 3018,
             video : false,
             vote_average : 7.53,
-            backdrop_path : "./data/backdrops/mad-max.jpg"
+            backdrop_path : "./data/backdrops/mad-max.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -86,7 +91,8 @@ tmdb_example = { results : [{
             vote_count : 1438,
             video : false,
             vote_average : 7.15,
-            backdrop_path : "./data/backdrops/mission-impossible.jpg"
+            backdrop_path : "./data/backdrops/mission-impossible.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -101,7 +107,8 @@ tmdb_example = { results : [{
             vote_count : 1900,
             video : false,
             vote_average : 6.76,
-            backdrop_path : "./data/backdrops/minions.jpg"
+            backdrop_path : "./data/backdrops/minions.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -116,7 +123,8 @@ tmdb_example = { results : [{
             vote_count : 1503,
             video : false,
             vote_average : 6.16,
-            backdrop_path : "./data/backdrops/terminator.jpg"
+            backdrop_path : "./data/backdrops/terminator.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -131,7 +139,8 @@ tmdb_example = { results : [{
             vote_count : 1224,
             video : false,
             vote_average : 6.32,
-            backdrop_path : "./data/backdrops/spectre.jpg"
+            backdrop_path : "./data/backdrops/spectre.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -146,7 +155,8 @@ tmdb_example = { results : [{
             vote_count : 720,
             video : false,
             vote_average : 6.98,
-            backdrop_path : "./data/backdrops/the-hunger-games(2).jpg"
+            backdrop_path : "./data/backdrops/the-hunger-games(2).jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -161,7 +171,8 @@ tmdb_example = { results : [{
             vote_count : 665,
             video : false,
             vote_average : 7.25,
-            backdrop_path : "./data/backdrops/southpaw.jpg"
+            backdrop_path : "./data/backdrops/southpaw.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -176,7 +187,8 @@ tmdb_example = { results : [{
             vote_count : 3884,
             video : false,
             vote_average : 8.28,
-            backdrop_path : "./data/backdrops/interstellar.jpg"
+            backdrop_path : "./data/backdrops/interstellar.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -191,7 +203,8 @@ tmdb_example = { results : [{
             vote_count : 2705,
             video : false,
             vote_average : 7.86,
-            backdrop_path : "./data/backdrops/big-hero-6.jpg"
+            backdrop_path : "./data/backdrops/big-hero-6.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -206,7 +219,8 @@ tmdb_example = { results : [{
             vote_count : 65,
             video : false,
             vote_average : 5.96,
-            backdrop_path : "./data/backdrops/the-revenant.jpg"
+            backdrop_path : "./data/backdrops/the-revenant.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -221,7 +235,8 @@ tmdb_example = { results : [{
             vote_count : 2064,
             video : false,
             vote_average : 8.07,
-            backdrop_path : "./data/backdrops/inside-out.jpg"
+            backdrop_path : "./data/backdrops/inside-out.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -236,7 +251,8 @@ tmdb_example = { results : [{
             vote_count : 2195,
             video : false,
             vote_average : 7.17,
-            backdrop_path : "./data/backdrops/the-hobbit.jpg"
+            backdrop_path : "./data/backdrops/the-hobbit.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -251,7 +267,8 @@ tmdb_example = { results : [{
             vote_count : 68,
             video : false,
             vote_average : 5.93,
-            backdrop_path : "./data/backdrops/the-hateful-8.jpg"
+            backdrop_path : "./data/backdrops/the-hateful-8.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -266,7 +283,8 @@ tmdb_example = { results : [{
             vote_count : 2247,
             video : false,
             vote_average : 6.92,
-            backdrop_path : "./data/backdrops/the-hunger-games(1).jpg"
+            backdrop_path : "./data/backdrops/the-hunger-games(1).jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -281,7 +299,8 @@ tmdb_example = { results : [{
             vote_count : 2863,
             video : false,
             vote_average : 7.53,
-            backdrop_path : "./data/backdrops/age-of-ultron.jpg"
+            backdrop_path : "./data/backdrops/age-of-ultron.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -296,7 +315,8 @@ tmdb_example = { results : [{
             vote_count : 423,
             video : false,
             vote_average : 6.68,
-            backdrop_path : "./data/backdrops/everest.jpg"
+            backdrop_path : "./data/backdrops/everest.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -311,7 +331,8 @@ tmdb_example = { results : [{
             vote_count : 20035,
             video : false,
             vote_average : 8.3,
-            backdrop_path : "./data/backdrops/avengers-endgame.jpg"
+            backdrop_path : "./data/backdrops/avengers-endgame.jpg",
+            banner : "./data/banner/avengers-endgame.jpg"
          },
          {
             adult : false,
@@ -326,7 +347,8 @@ tmdb_example = { results : [{
             vote_count : 28000,
             video : false,
             vote_average : 8.8,
-            backdrop_path : "./data/backdrops/inception.jpg"
+            backdrop_path : "./data/backdrops/inception.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -341,7 +363,8 @@ tmdb_example = { results : [{
             vote_count: 15000,
             video : false,
             vote_average : 8.4,
-            backdrop_path : "./data/backdrops/game-of-thrones.jpg"
+            backdrop_path : "./data/backdrops/game-of-thrones.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -356,7 +379,8 @@ tmdb_example = { results : [{
             vote_count: 13000,
             video : false,
             vote_average : 7.0,
-            backdrop_path : "./data/backdrops/the-lion-king.jpg"
+            backdrop_path : "./data/backdrops/the-lion-king.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -371,7 +395,8 @@ tmdb_example = { results : [{
             vote_count: 500,
             video : false,
             vote_average : 7.8,
-            backdrop_path : "./data/backdrops/hitchcock-truffaut.jpg"
+            backdrop_path : "./data/backdrops/hitchcock-truffaut.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -386,7 +411,8 @@ tmdb_example = { results : [{
             vote_count: 8000,
             video : false,
             vote_average : 7.2,
-            backdrop_path : "./data/backdrops/light-between-oceans.jpg"
+            backdrop_path : "./data/backdrops/light-between-oceans.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -401,7 +427,8 @@ tmdb_example = { results : [{
             vote_count: 20000,
             video : false,
             vote_average : 7.9,
-            backdrop_path : "./data/backdrops/harry-potter-philosopher-stone.jpg"
+            backdrop_path : "./data/backdrops/harry-potter-philosopher-stone.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -416,7 +443,8 @@ tmdb_example = { results : [{
             vote_count : 17000,
             video : false,
             vote_average : 8.5,
-            backdrop_path : "./data/backdrops/joker.jpg"
+            backdrop_path : "./data/backdrops/joker.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -431,7 +459,8 @@ tmdb_example = { results : [{
             vote_count : 19000,
             video : false,
             vote_average : 8.8,
-            backdrop_path : "./data/backdrops/fight-club.jpg"
+            backdrop_path : "./data/backdrops/fight-club.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -446,7 +475,8 @@ tmdb_example = { results : [{
             vote_count : 13000,
             video : false,
             vote_average : 8.7,
-            backdrop_path : "./data/backdrops/stranger-things.jpg"
+            backdrop_path : "./data/backdrops/stranger-things.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -461,7 +491,8 @@ tmdb_example = { results : [{
             vote_count : 10000,
             video : false,
             vote_average : 7.5,
-            backdrop_path : "./data/backdrops/once-upon-a-time-in-hollywood.jpg"
+            backdrop_path : "./data/backdrops/once-upon-a-time-in-hollywood.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -476,7 +507,8 @@ tmdb_example = { results : [{
             vote_count : 9000,
             video : false,
             vote_average : 7.4,
-            backdrop_path : "./data/backdrops/moonlight.jpg"
+            backdrop_path : "./data/backdrops/moonlight.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -491,7 +523,8 @@ tmdb_example = { results : [{
             vote_count : 5000,
             video : false,
             vote_average : 6.8,
-            backdrop_path : "./data/backdrops/all-is-true.jpg"
+            backdrop_path : "./data/backdrops/all-is-true.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -506,7 +539,8 @@ tmdb_example = { results : [{
             vote_count : 7800,
             video : false,
             vote_average : 6.3,
-            backdrop_path : "./data/backdrops/the-choice.jpg"
+            backdrop_path : "./data/backdrops/the-choice.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -521,8 +555,9 @@ tmdb_example = { results : [{
             vote_count :   3500,          
             video : false,
             vote_average : 7.5,
-            backdrop_path : "./data/backdrops/indiana-jones-temple-of-doom.jpg"
-         },  
+            backdrop_path : "./data/backdrops/indiana-jones-temple-of-doom.jpg",
+            banner : "./data/banner/.jpg"},
+
          {
             adult : false,
             overview : "The life of Charles Darwin, his role in the development of the theory of evolution, and his struggle with his own faith.",
@@ -536,7 +571,8 @@ tmdb_example = { results : [{
             vote_count : 6500,
             video : false,
             vote_average : 7.0,
-            backdrop_path : "./data/backdrops/creation.jpg"
+            backdrop_path : "./data/backdrops/creation.jpg",
+            banner : "./data/banner/.jpg"
          },
          {
             adult : false,
@@ -551,6 +587,7 @@ tmdb_example = { results : [{
             vote_count : 28000,
             video: false,
             vote_average : 8.9,
-            backdrop_path : "./data/backdrops/friends.jpg"
+            backdrop_path : "./data/backdrops/friends.jpg",
+            banner : "./data/banner/friends.jpg"
          }
      ]}

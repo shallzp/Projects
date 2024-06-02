@@ -19,7 +19,7 @@ body {
   margin: 0 auto;
 }
 
-header {
+#header {
   background-color: transparent;
   position: fixed;
   z-index: 100;
@@ -30,7 +30,7 @@ header {
   padding: 20px;
 }
 
-header.black-bg {
+#header.black-bg {
   background-color: rgb(20, 20, 20);
 }
 
@@ -178,12 +178,12 @@ img.explore-nudge {
 .banner-content {
   display: flex;
   flex-direction: column;
-  padding-top: 70px;
+  padding-top: 60px;
 }
 
 .banner-title {
   color: white;
-  font-size: 84px;
+  font-size: 80px;
   line-height: 1.1;
   margin: 0;
   margin-bottom: 16px;
@@ -284,4 +284,8 @@ img.explore-nudge {
   .nav-main{
     display: none;
   }
+
+  .banner-overview, .banner-title{
+        max-width: 100%;
+    }
 }
