@@ -128,8 +128,9 @@ img.explore-nudge {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  overflow-x:auto;
+  overflow-x: auto;
   overflow-y: hidden;
+  overflow: visible;
 }
 
 .movie-item {
@@ -138,13 +139,16 @@ img.explore-nudge {
   margin-right: 6px;
   border-radius: 4px;
   position: relative;
+  transition: transform linear 300ms, z-index 0s linear 300ms;
 }
 
-.move-item img {
-  width: inherit;
+.move-item-img {
+  width: 100%;
+  border-radius: inherit;
+  /* width: inherit; */
 }
 
-.movie-item .iframe-wrap {
+.movie-item .yt-iframe {
   position: absolute;
   top: 0;
   left: 0;
@@ -156,13 +160,14 @@ img.explore-nudge {
   outline: none;
 }
 
-.movie-item:hover .iframe-wrap {
+.movie-item:hover .yt-iframe {
   display: block;
 }
 
 .movie-item:hover {
   transform: scale(1.3);
   transition: transform linear 300ms;
+  z-index: 20;
 }
 
 
