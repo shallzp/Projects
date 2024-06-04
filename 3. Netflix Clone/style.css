@@ -128,7 +128,7 @@ img.explore-nudge {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  overflow-x: auto !important;
+  /* overflow-x: auto !important; */
   overflow-y: hidden;
   overflow: visible;
 }
@@ -143,6 +143,8 @@ img.explore-nudge {
   display: grid;
   grid-template-rows: 0.5fr 0.5fr;
   gap: 0px;
+  height: 150px;
+  margin: 2px;
 }
 
 .movie-item-img {

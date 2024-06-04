@@ -89,9 +89,9 @@ function buildMovieSection(dataList, category_name) {
                 <ul class="first">
                     <li class="access-item"><img src="./images/icons/play-circle.png"></li>
                     <li class="access-item"><img src="./images/icons/add.png"></li>
-                    <li class="access-item"><img src="./images/icons/play.png"></li>
-                    <li class="access-item"><img src="./images/icons/play.png"></li>
-                    <li class="access-item last"><img src="./images/icons/play.png"></li>
+                    <li class="access-item"><img src="./images/icons/thumbs-up.png"></li>
+                    <li class="access-item"><img src="./images/icons/thumbs-down.png"></li>
+                    <li class="access-item last"><img src="./images/icons/down-button.png"></li>
                 </ul>
                 <ul class="second">
                     <li class="access-item"><p class="green">93% Match</p></li>
@@ -195,7 +195,7 @@ function setupNavigationFiltering() {
 function filterContent(category) {
     let data;
 
-    if(category === "home"){
+    if(category === "all"){
         data = tmdb_example.results;
         renderMovieSections(data, "Home");
     }
@@ -210,6 +210,11 @@ function filterContent(category) {
     else if(category === "news-popular") {
         data = getMoviesByCategory(tmdb_example, "News");
         renderMovieSections(data, "News");
+    }
+    else if (category === "language") {
+        const selectedGenre = $('.genre-dropdown').val(); // Assuming you have a dropdown for genres
+        data = tmdb_example.results.filter(movie => movie.genre === selectedGenre);
+        renderMovieSections(data, selectedGenre);
     }
 }
 
