@@ -9,7 +9,7 @@ tmdb_example = { results : [{
             title : "Star Wars: The Force Awakens",
             popularity : 79.28243,
             vote_count : 1055,
-            video : false,
+            category : "Film",
             vote_average : 8.05,
             backdrop_path : "./data/backdrops/star-war.jpg",
             banner : "./data/banner/.jpg"   
@@ -25,10 +25,10 @@ tmdb_example = { results : [{
             title : "Ant-Man",
             popularity : 36.106324,
             vote_count : 2063,
-            video : false,
+            category : "Film",
             vote_average : 6.88,
-            backdrop_path : "./data/backdrops/ant-man.jpg"
-  ,             banner : "./data/banner/.jpg"
+            backdrop_path : "./data/backdrops/ant-man.jpg",
+            banner : "./data/banner/.jpg"
          },
          {  
             adult : false,
@@ -41,7 +41,7 @@ tmdb_example = { results : [{
             title : "Jurassic World",
             popularity : 30.053033,
             vote_count : 3272,
-            video : false,
+            category : "Film",
             vote_average : 6.79,
             backdrop_path : "./data/backdrops/jurassic-world.jpg",
             banner : "./data/banner/.jpg"
@@ -57,7 +57,7 @@ tmdb_example = { results : [{
             title : "The Martian",
             popularity : 29.571367,
             vote_count : 1392,
-            video : false,
+            category : "Film",
             vote_average : 7.64,
             backdrop_path : "./data/backdrops/the-martian.jpg",
             banner : "./data/banner/.jpg"
@@ -73,7 +73,7 @@ tmdb_example = { results : [{
             title : "Mad Max: Fury Road",
             popularity : 24.89044,
             vote_count : 3018,
-            video : false,
+            category : "Film",
             vote_average : 7.53,
             backdrop_path : "./data/backdrops/mad-max.jpg",
             banner : "./data/banner/.jpg"
@@ -89,7 +89,7 @@ tmdb_example = { results : [{
             title : "Mission: Impossible – Rogue Nation",
             popularity : 19.32191,
             vote_count : 1438,
-            video : false,
+            category : "Film",
             vote_average : 7.15,
             backdrop_path : "./data/backdrops/mission-impossible.jpg",
             banner : "./data/banner/.jpg"
@@ -105,7 +105,7 @@ tmdb_example = { results : [{
             title : "Minions",
             popularity : 19.109008,
             vote_count : 1900,
-            video : false,
+            category : "Film",
             vote_average : 6.76,
             backdrop_path : "./data/backdrops/minions.jpg",
             banner : "./data/banner/.jpg"
@@ -121,7 +121,7 @@ tmdb_example = { results : [{
             title : "Terminator Genisys",
             popularity : 18.795489,
             vote_count : 1503,
-            video : false,
+            category : "Film",
             vote_average : 6.16,
             backdrop_path : "./data/backdrops/terminator.jpg",
             banner : "./data/banner/.jpg"
@@ -137,7 +137,7 @@ tmdb_example = { results : [{
             title : "Spectre",
             popularity : 18.086175,
             vote_count : 1224,
-            video : false,
+            category : "Film",
             vote_average : 6.32,
             backdrop_path : "./data/backdrops/spectre.jpg",
             banner : "./data/banner/.jpg"
@@ -153,7 +153,7 @@ tmdb_example = { results : [{
             title : "The Hunger Games: Mockingjay - Part 2",
             popularity : 17.44518,
             vote_count : 720,
-            video : false,
+            category : "Film",
             vote_average : 6.98,
             backdrop_path : "./data/backdrops/the-hunger-games(2).jpg",
             banner : "./data/banner/.jpg"
@@ -169,7 +169,7 @@ tmdb_example = { results : [{
             title : "Southpaw",
             popularity : 17.290864,
             vote_count : 665,
-            video : false,
+            category : "Film",
             vote_average : 7.25,
             backdrop_path : "./data/backdrops/southpaw.jpg",
             banner : "./data/banner/.jpg"
@@ -185,7 +185,7 @@ tmdb_example = { results : [{
             title : "Interstellar",
             popularity : 15.787166,
             vote_count : 3884,
-            video : false,
+            category : "Film",
             vote_average : 8.28,
             backdrop_path : "./data/backdrops/interstellar.jpg",
             banner : "./data/banner/.jpg"
@@ -201,7 +201,7 @@ tmdb_example = { results : [{
             title : "Big Hero 6",
             popularity : 14.970207,
             vote_count : 2705,
-            video : false,
+            category : "Film",
             vote_average : 7.86,
             backdrop_path : "./data/backdrops/big-hero-6.jpg",
             banner : "./data/banner/.jpg"
@@ -217,7 +217,7 @@ tmdb_example = { results : [{
             title : "The Revenant",
             popularity : 14.960069,
             vote_count : 65,
-            video : false,
+            category : "Film",
             vote_average : 5.96,
             backdrop_path : "./data/backdrops/the-revenant.jpg",
             banner : "./data/banner/.jpg"
@@ -233,7 +233,7 @@ tmdb_example = { results : [{
             title : "Inside Out",
             popularity : 14.148873,
             vote_count : 2064,
-            video : false,
+            category : "Film",
             vote_average : 8.07,
             backdrop_path : "./data/backdrops/inside-out.jpg",
             banner : "./data/banner/.jpg"
@@ -249,7 +249,7 @@ tmdb_example = { results : [{
             title : "The Hobbit: The Battle of the Five Armies",
             popularity : 14.125181,
             vote_count : 2195,
-            video : false,
+            category : "Film",
             vote_average : 7.17,
             backdrop_path : "./data/backdrops/the-hobbit.jpg",
             banner : "./data/banner/.jpg"
@@ -265,7 +265,7 @@ tmdb_example = { results : [{
             title : "The Hateful Eight",
             popularity : 13.737843,
             vote_count : 68,
-            video : false,
+            category : "Film",
             vote_average : 5.93,
             backdrop_path : "./data/backdrops/the-hateful-8.jpg",
             banner : "./data/banner/.jpg"
@@ -281,7 +281,7 @@ tmdb_example = { results : [{
             title : "The Hunger Games: Mockingjay - Part 1",
             popularity : 13.404845,
             vote_count : 2247,
-            video : false,
+            category : "Film",
             vote_average : 6.92,
             backdrop_path : "./data/backdrops/the-hunger-games(1).jpg",
             banner : "./data/banner/.jpg"
@@ -297,7 +297,7 @@ tmdb_example = { results : [{
             title : "Avengers: Age of Ultron",
             popularity : 12.525953,
             vote_count : 2863,
-            video : false,
+            category : "Film",
             vote_average : 7.53,
             backdrop_path : "./data/backdrops/age-of-ultron.jpg",
             banner : "./data/banner/.jpg"
@@ -313,7 +313,7 @@ tmdb_example = { results : [{
             title : "Everest",
             popularity : 12.122457,
             vote_count : 423,
-            video : false,
+            category : "Film",
             vote_average : 6.68,
             backdrop_path : "./data/backdrops/everest.jpg",
             banner : "./data/banner/.jpg"
@@ -329,7 +329,7 @@ tmdb_example = { results : [{
             title : "Avengers: Endgame",
             popularity : 87.328,
             vote_count : 20035,
-            video : false,
+            category : "Film",
             vote_average : 8.3,
             backdrop_path : "./data/backdrops/avengers-endgame.jpg",
             banner : "./data/banner/avengers-endgame.jpg"
@@ -345,7 +345,7 @@ tmdb_example = { results : [{
             title : "Inception",
             popularity : 63.277,
             vote_count : 28000,
-            video : false,
+            category : "Film",
             vote_average : 8.8,
             backdrop_path : "./data/backdrops/inception.jpg",
             banner : "./data/banner/.jpg"
@@ -361,7 +361,7 @@ tmdb_example = { results : [{
             title : "Game of Thrones",
             popularity : 80.123,
             vote_count: 15000,
-            video : false,
+            category : "TV Show",
             vote_average : 8.4,
             backdrop_path : "./data/backdrops/game-of-thrones.jpg",
             banner : "./data/banner/.jpg"
@@ -377,7 +377,7 @@ tmdb_example = { results : [{
             title : "The Lion King",
             popularity : 95.416,
             vote_count: 13000,
-            video : false,
+            category : "Film",
             vote_average : 7.0,
             backdrop_path : "./data/backdrops/the-lion-king.jpg",
             banner : "./data/banner/.jpg"
@@ -393,7 +393,7 @@ tmdb_example = { results : [{
             title : "Hitchcock/Truffaut",
             popularity : 30.301,
             vote_count: 500,
-            video : false,
+            category : "Film",
             vote_average : 7.8,
             backdrop_path : "./data/backdrops/hitchcock-truffaut.jpg",
             banner : "./data/banner/.jpg"
@@ -409,7 +409,7 @@ tmdb_example = { results : [{
             title : "The Light Between Oceans",
             popularity : 45.123,
             vote_count: 8000,
-            video : false,
+            category : "Film",
             vote_average : 7.2,
             backdrop_path : "./data/backdrops/light-between-oceans.jpg",
             banner : "./data/banner/.jpg"
@@ -425,7 +425,7 @@ tmdb_example = { results : [{
             title : "Harry Potter and the Philosopher's Stone",
             popularity : 99.321,
             vote_count: 20000,
-            video : false,
+            category : "Film",
             vote_average : 7.9,
             backdrop_path : "./data/backdrops/harry-potter-philosopher-stone.jpg",
             banner : "./data/banner/.jpg"
@@ -441,7 +441,7 @@ tmdb_example = { results : [{
             title : "Joker",
             popularity : 95.456,
             vote_count : 17000,
-            video : false,
+            category : "Film",
             vote_average : 8.5,
             backdrop_path : "./data/backdrops/joker.jpg",
             banner : "./data/banner/.jpg"
@@ -457,7 +457,7 @@ tmdb_example = { results : [{
             title : "Fight Club",
             popularity : 70.982,
             vote_count : 19000,
-            video : false,
+            category : "Film",
             vote_average : 8.8,
             backdrop_path : "./data/backdrops/fight-club.jpg",
             banner : "./data/banner/.jpg"
@@ -473,7 +473,7 @@ tmdb_example = { results : [{
             title : "Stranger Things",
             popularity : 82.432,
             vote_count : 13000,
-            video : false,
+            category : "TV Show",
             vote_average : 8.7,
             backdrop_path : "./data/backdrops/stranger-things.jpg",
             banner : "./data/banner/.jpg"
@@ -489,7 +489,7 @@ tmdb_example = { results : [{
             title : "Once Upon a Time… in Hollywood",
             popularity : 60.897,
             vote_count : 10000,
-            video : false,
+            category : "Film",
             vote_average : 7.5,
             backdrop_path : "./data/backdrops/once-upon-a-time-in-hollywood.jpg",
             banner : "./data/banner/.jpg"
@@ -505,7 +505,7 @@ tmdb_example = { results : [{
             title : "Moonlight",
             popularity : 44.625,
             vote_count : 9000,
-            video : false,
+            category : "Film",
             vote_average : 7.4,
             backdrop_path : "./data/backdrops/moonlight.jpg",
             banner : "./data/banner/.jpg"
@@ -521,7 +521,7 @@ tmdb_example = { results : [{
             title : "All Is True",
             popularity : 30.123,
             vote_count : 5000,
-            video : false,
+            category : "Film",
             vote_average : 6.8,
             backdrop_path : "./data/backdrops/all-is-true.jpg",
             banner : "./data/banner/.jpg"
@@ -537,7 +537,7 @@ tmdb_example = { results : [{
             title : "The Choice",
             popularity : 55.324,
             vote_count : 7800,
-            video : false,
+            category : "Film",
             vote_average : 6.3,
             backdrop_path : "./data/backdrops/the-choice.jpg",
             banner : "./data/banner/.jpg"
@@ -553,7 +553,7 @@ tmdb_example = { results : [{
             title : "Indiana Jones and the Temple of Doom",
             popularity : 40.8791,
             vote_count :   3500,          
-            video : false,
+            category : "Film",
             vote_average : 7.5,
             backdrop_path : "./data/backdrops/indiana-jones-temple-of-doom.jpg",
             banner : "./data/banner/.jpg"},
@@ -569,7 +569,7 @@ tmdb_example = { results : [{
             title : "Creation",
             popularity : 29.301,
             vote_count : 6500,
-            video : false,
+            category : "Film",
             vote_average : 7.0,
             backdrop_path : "./data/backdrops/creation.jpg",
             banner : "./data/banner/.jpg"
@@ -585,7 +585,7 @@ tmdb_example = { results : [{
             title : "Friends",
             popularity : 80.212,
             vote_count : 28000,
-            video: false,
+            category : "TV Show",
             vote_average : 8.9,
             backdrop_path : "./data/backdrops/friends.jpg",
             banner : "./data/banner/friends.jpg"

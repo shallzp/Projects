@@ -57,14 +57,14 @@ body {
   flex-direction: row;
 }
 
-.nav-items a {
+.nav-items span {
   text-decoration: none;
   margin-right: 20px;
   color: #e5e5e5;
   opacity: .83;
 }
 
-.nav-items.active a{
+.nav-items.active span {
   color: white;
   opacity: 1;
   font-weight: 500;
@@ -128,7 +128,7 @@ img.explore-nudge {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  overflow-x: auto;
+  overflow-x: auto !important;
   overflow-y: hidden;
   overflow: visible;
 }
@@ -140,12 +140,18 @@ img.explore-nudge {
   border-radius: 4px;
   position: relative;
   transition: transform linear 300ms, z-index 0s linear 300ms;
+  display: grid;
+  grid-template-rows: 0.5fr 0.5fr;
+  gap: 0px;
 }
 
-.move-item-img {
-  width: 100%;
-  border-radius: inherit;
-  /* width: inherit; */
+.movie-item-img {
+  /* width: 100%; */
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  width: inherit;
+  position: relative; /* Keep image in the normal document flow */
+  z-index: 10;
 }
 
 .movie-item .yt-iframe {
@@ -293,4 +299,74 @@ img.explore-nudge {
   .banner-overview, .banner-title{
         max-width: 100%;
     }
+}
+
+
+
+
+/* On hover movies */
+.access {
+  background-color: #141414;
+  padding: 15px;
+  margin: 0;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  width: inherit;
+}
+
+.on-hover {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+}
+
+.first, .second, .third {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+.access-item {
+  list-style: none;
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  color: #e5e5e5;
+}
+
+.access-item img {
+  height: 35px;
+}
+
+.access-item.last {
+  padding-left: 21px;
+}
+
+.second .access-item {
+  font-size: 15px;
+  padding-right: 2px;
+}
+
+.access-item .green {
+  color: rgb(63, 138, 63);
+}
+
+.access-item .box {
+  font-size: 12px;
+  border: #e5e5e5 solid 0.8px;
+  padding: 1px 4px;
+}
+
+.box.hd {
+  font-size: 8px;
+}
+
+.third .access-item {
+  padding-right: 10px;
 }

@@ -15,12 +15,12 @@
             </div>
             <div class="nav-main">
                 <ul>
-                    <li class="nav-items active"><a href="">Home</a></li>
-                    <li class="nav-items"><a href="#">TV Shows</a></li>
-                    <li class="nav-items"><a href="#">Movies</a></li>
-                    <li class="nav-items"><a href="#">News & Popular</a></li>
-                    <li class="nav-items"><a href="#">My List</a></li>
-                    <li class="nav-items"><a href="#">Browse by Languages</a></li>
+                    <li class="nav-items active" data-category="all"><span>Home</span></li>
+                    <li class="nav-items" data-category="tv-shows"><span>TV Shows</span></li>
+                    <li class="nav-items" data-category="movies"><span>Movies</span></li>
+                    <li class="nav-items" data-category="news-popular"><span>News & Popular</span></li>
+                    <li class="nav-items"><span>My List</span></li>
+                    <li class="nav-items"><span>Browse by Languages</span></li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -50,12 +50,33 @@
 
     <div class="movie container" id="movie-section">
         <!-- <div class="movie-section">
-            <h2 class="movie-section-heading">Trending Now
-                <span class="explore-nudge">Explore All</span>
-                <img src="./images/icons/next.png" class="explore-nudge">
-            </h2>
-            <div class="movie-row">
-                <div class="movie-item"><img src="..." alt="..."></div>
+                <h2 class="movie-section-heading">Trending Now
+                    <span class="explore-nudge">Explore All</span>
+                </h2>
+                <div class="movie-row">
+                    <div class="movie-item">
+                        <img src="..." alt="...">
+                        <div class="access">
+                        <ul class="first">
+                            <li class="access-item"><img src="./images/icons/play-circle.png"></li>
+                            <li class="access-item"><img src="./images/icons/add.png"></li>
+                            <li class="access-item"><img src="./images/icons/play.png"></li>
+                            <li class="access-item"><img src="./images/icons/play.png"></li>
+                            <li class="access-item last"><img src="./images/icons/play.png"></li>
+                        </ul>
+                        <ul class="second">
+                            <li class="access-item"><p class="green">93% Match</p></li>
+                            <li class="access-item"><p class="box">13+</p></li>
+                            <li class="access-item"><p>1 Season</p></li>
+                            <li class="access-item"><span class="box hd">HD</span></li>
+                        </ul>
+                        <ul class="third">
+                            <li class="access-item">genre</li>
+                            <li class="access-item">genre</li>
+                            <li class="access-item">genre</li>
+                        </ul>
+                        </div>
+                    </div>
                 <div class="movie-item"><img src="..." alt="..."></div>
                 <div class="movie-item"><img src="..." alt="..."></div>
                 <div class="movie-item"><img src="..." alt="..."></div>

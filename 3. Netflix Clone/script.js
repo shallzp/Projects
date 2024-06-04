@@ -1,21 +1,23 @@
 const yt_api_key = "AIzaSyDE1-U79ej6aoXFkqJWRMw87WZX4JAr8gQ";
 const yt_api_path = (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${yt_api_key}`;
 
+
 function init() {
-    fetchAndBuildTrending();
-    fetchAndBuildAllSections();
-    setupNavigationFiltering
+    fetchAndBuildAllSections(tmdb_example, genre_data);
+
+    setupNavigationFiltering();
+    Hover();
 }
 
 
-function buildBanner(movie) {
-    $("#banner-section").css("background-image", `url(${movie.banner})`);
+function buildBanner(movieItem) {
+    $("#banner-section").css("background-image", `url(${movieItem.banner})`);
 
     const bannerSectionHTML = `
     <div class="banner-content container">
-        <h2 class="banner-title">${movie.title}</h2>
+        <h2 class="banner-title">${movieItem.title}</h2>
         <p class="banner-info">#4 in TV Shows Today</p>
-        <p class="banner-overview">${movie.overview}</p>
+        <p class="banner-overview">${movieItem.overview}</p>
         <div class="action-buttons">
             <button class="action"><img src="./images/icons/play.png">Play</button>
             <button class="action"><img src="./images/icons/info.png">More Info</button>
@@ -26,57 +28,85 @@ function buildBanner(movie) {
     $("#banner-section").append(bannerSectionHTML);
 }
 
+
 // Returns result array with popularity higher than the threshold
-function getMoviesByPopularity(threshold) {
-    return tmdb_example.results.filter(movie => movie.popularity > threshold);
+function getMoviesByPopularity(data, threshold) {
+    return data.results.filter(movie => movie.popularity > threshold);
 }
 
-function fetchAndBuildTrending() {
-    const trending = getMoviesByPopularity(80);
-    buildMovieSection(trending, "Trending Now");
+function fetchAndBuildTrending(data) {
+    const trendingData = getMoviesByPopularity(data, 80);
+    buildMovieSection(trendingData, "Trending Now");
 
-    const randomIndex = Math.floor(Math.random() * trending.length);
-    buildBanner(trending[randomIndex]);
+    const randomIndex = Math.floor(Math.random() * trendingData.length);
+    buildBanner(trendingData[randomIndex]);
 }
+
 
 // Fetches each genre and builds sections for it
-function fetchAndBuildAllSections() {
-    const categories = genre_data["genre"];
-    if (Array.isArray(categories) && categories.length) {
-        categories.forEach(category => {
-            fetchMovie(category);
+function fetchAndBuildAllSections(data, genreData) {
+    const genres = genreData["genre"];
+  
+    if (Array.isArray(genres) && genres.length) {
+        fetchAndBuildTrending(tmdb_example);
+        genres.forEach(genre => {
+            fetchMovie(data, genre);
         });
     }
-}
+}  
 
 // Returns results array that have genre id
-function getMoviesByGenreId(genreId) {
-    return tmdb_example.results.filter(movie => movie.genre_ids.includes(genreId));
+function getMoviesByGenreId(data, genreId) {
+    return data.results.filter(movie => movie.genre_ids.includes(genreId));
 }
 
 // Fetches each movie with different genre ids
-function fetchMovie(category) {
-    const category_id = category["id"];
-    const category_name = category["name"];
+function fetchMovie(data, genreItem) {
+    const genre_id = genreItem["id"];
+    const genre_name = genreItem["name"];
 
-    const movies = getMoviesByGenreId(category_id);
+    const movies = getMoviesByGenreId(data, genre_id);
     if (Array.isArray(movies) && movies.length) {
-        buildMovieSection(movies, category_name);
+        buildMovieSection(movies, genre_name);
     }
 }
 
-// Builds movie sections
-function buildMovieSection(list, category_name) {
-    console.log(list, category_name);
+//Builds movie section
+function buildMovieSection(dataList, category_name) {
+    console.log(dataList, category_name);
 
-    const movieListHTML = list.map(item => {
+    const movieListHTML = dataList.map(item => {
+        const genres = item.genre_ids.map(id => genre_data.genre.find(genre => genre.id === id)?.name);
+        const filteredGenres = genres.filter(genreName => genreName);
+        const genreList = filteredGenres.join(', ');
+
         return `
         <div class="movie-item" onmouseover="searchMovieTrailer('${item.title}', 'yt${item.id}')">
             <img class="movie-item-img" src="${item.backdrop_path}" alt="${item.title}">
             <div class="yt-iframe" id="yt${item.id}"></div>
+            
+            <div class="access">
+                <ul class="first">
+                    <li class="access-item"><img src="./images/icons/play-circle.png"></li>
+                    <li class="access-item"><img src="./images/icons/add.png"></li>
+                    <li class="access-item"><img src="./images/icons/play.png"></li>
+                    <li class="access-item"><img src="./images/icons/play.png"></li>
+                    <li class="access-item last"><img src="./images/icons/play.png"></li>
+                </ul>
+                <ul class="second">
+                    <li class="access-item"><p class="green">93% Match</p></li>
+                    <li class="access-item"><p class="box">13+</p></li>
+                <li class="access-item"><p>1 Season</p></li>
+                <li class="access-item"><span class="box hd">HD</span></li>
+                </ul>
+                <ul class="third">
+                    <li class="access-item">${genreList}</li>
+                </ul>
+            </div>
         </div>
         `;
     }).join('');
+
 
     const movieSectionHTML = `
     <div class="movie-section">
@@ -111,39 +141,90 @@ function searchMovieTrailer(movieName, iframeId) {
 
 $(document).ready(() => {
     init();
+  
     $(window).scroll(() => {
-        if (window.scrollY > 2)
-            $("#header").addClass("black-bg");
+      if (window.scrollY > 5) {
+        $("#header").addClass("black-bg");
+      } 
+      else {
+        $("#header").removeClass("black-bg");
+      }
     });
 });
+  
+
+//For transitiom of movie-item
+function noHover() {
+    $(this).find(".access").addClass("on-hover");
+}
+
+function Hover() {
+    $(".access").addClass("on-hover");
+    $(".movie-item").hover(function() {
+        $(this).find(".access").removeClass("on-hover");
+    }, noHover);
+}
+  
+  
 
 
 // Navigation
-function setupNavigationFiltering() {
-    const navItems = document.querySelectorAll('.nav-items');
-
-    navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            const category = this.dataset.category;
-            filterContent(category);
-            setActiveNavItem(this);
-        });
-    });
+function getMoviesByCategory(data, catName) {
+    return data.results.filter(movie => movie.category.includes(catName));
 }
 
 function setActiveNavItem(activeItem) {
-    const navItems = document.querySelectorAll('.nav-items');
-    navItems.forEach(item => item.classList.remove('active'));
-    activeItem.classList.add('active');
+    $('.nav-items').removeClass('active');
+    $(activeItem).addClass('active');
 }
 
-function filterContent(category) {
-    const sections = document.querySelectorAll('.movie-section');
-    sections.forEach(section => {
-        if (category === 'all' || section.dataset.category === category) {
-            section.style.display = 'block';
-        } else {
-            section.style.display = 'none';
+function setupNavigationFiltering() {
+    const navItems = $('.nav-items');
+
+    navItems.each(function(index) {
+        if (index < 4) { // Only consider the first 4 nav items
+            $(this).click(() => {
+                const navItemCat = $(this).attr('data-category');
+                filterContent(navItemCat);
+                setActiveNavItem(this);
+            });
         }
     });
 }
+
+function filterContent(category) {
+    let data;
+
+    if(category === "home"){
+        data = tmdb_example.results;
+        renderMovieSections(data, "Home");
+    }
+    else if(category === "tv-shows") {
+        data = getMoviesByCategory(tmdb_example, "TV Show");
+        renderMovieSections(data, "TV Shows");
+    }
+    else if(category === "movies") {
+        data = getMoviesByCategory(tmdb_example, "Film");
+        renderMovieSections(data, "Movies");
+    }
+    else if(category === "news-popular") {
+        data = getMoviesByCategory(tmdb_example, "News");
+        renderMovieSections(data, "News");
+    }
+}
+
+function renderMovieSections(data, cat) {
+    const movieSection = $('#movie-section');
+    movieSection.empty(); // Clear existing sections
+
+    if (Array.isArray(data) && data.length) {
+        buildMovieSection(data, cat);
+        Hover();
+    }
+}
+
+// function updateMoviesByGenreId(genreId) {
+//     const filteredResults = tmdb_example.results.filter(movie => movie.genre_ids.includes(genreId));
+//     const updated_tmdb_example = { ...tmdb_example, results: filteredResults };
+//     return updated_tmdb_example;
+// }
