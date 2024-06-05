@@ -20,7 +20,9 @@
                     <li class="nav-items" data-category="movies"><span>Movies</span></li>
                     <li class="nav-items" data-category="news-popular"><span>News & Popular</span></li>
                     <li class="nav-items" data-category="my-list"><span>My List</span></li>
-                    <li class="nav-items" data-category="languages"><span>Browse by Languages</span></li>
+                    <li class="nav-items" data-category="languages">
+                        <span>Browse by Languages</span>
+                    </li>
                 </ul>
             </div>
             <div class="nav-right">
@@ -28,61 +30,148 @@
                     <li class="nav-right-item"><img src="./images/icons/search.png" class="search"></li>
                     <li class="nav-right-item"><img src="./images/icons/bell.png" class="bell-notification"></li>
                     <li class="nav-right-item"><img src="./images/icons/user.png" class="user"></li>
-                    <li class="nav-right-item center"><img src="./images/icons/dropdown.png" class="dropdown"></li>
+                    <li class="nav-right-item center dropdown"><img src="./images/icons/dropdown.png" class="dropdown-img">
+                        <div class="dropdown-content">
+                            <ul>
+                                <li class="drop-options"><img src="./images/kids.jpeg" class="kids">Kids</li>
+                                <li class="drop-options">Manage Profile</li>
+                                <hr width="100%">
+                                <li class="drop-options">Account</li>
+                                <li class="drop-options">Help Centre</li>
+                                <li class="drop-options">Sign out of Netflix</li>
+                            </ul>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
     </div>
 
-    <div class="banner" id="banner-section">
-    <!-- <div class="banner" id="banner-section" style="background-image: url(./data/banner/avatar-the-last-airbender.jpg);"> -->
-        <!-- <div class="banner-content container">
-            <h2 class="banner-title">DEHLI CRIME</h2>
-            <p class="banner-info">#4 in TV Shows Today</p>
-            <p class="banner-overview">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
-            <div class="action-buttons">
-                <button class="action"><img src="./images/icons/play.png">Play</button>
-                <button class="action"><img src="./images/icons/info.png">More Info</button>
+    <div class="main">
+        <div class="banner" id="banner-section">
+            <!-- <div class="banner" id="banner-section" style="background-image: url(./data/banner/avatar-the-last-airbender.jpg);"> -->
+                <!-- <div class="banner-content container">
+                    <h2 class="banner-title">DEHLI CRIME</h2>
+                    <p class="banner-info">#4 in TV Shows Today</p>
+                    <p class="banner-overview">Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
+                    <div class="action-buttons">
+                        <button class="action"><img src="./images/icons/play.png">Play</button>
+                        <button class="action"><img src="./images/icons/info.png">More Info</button>
+                    </div>
+                </div> -->
+                <div class="banner_fadeBottom"></div>
             </div>
-        </div> -->
-        <div class="banner_fadeBottom"></div>
+        
+        <div class="movie container" id="movie-section">
+                <!-- <div class="movie-section">
+                        <h2 class="movie-section-heading">Trending Now
+                            <span class="explore-nudge">Explore All</span>
+                        </h2>
+                        <div class="movie-row">
+                            <div class="movie-item">
+                                <img src="..." alt="...">
+                                <div class="access">
+                                <ul class="first">
+                                    <li class="access-item"><img src="./images/icons/play-circle.png"></li>
+                                    <li class="access-item"><img src="./images/icons/add.png"></li>
+                                    <li class="access-item"><img src="./images/icons/thumbs-up.png"></li>
+                                    <li class="access-item"><img src="./images/icons/thumbs-down.png"></li>
+                                    <li class="access-item last"><img src="./images/icons/down-button.png"></li>
+                                </ul>
+                                <ul class="second">
+                                    <li class="access-item"><p class="green">93% Match</p></li>
+                                    <li class="access-item"><p class="box">13+</p></li>
+                                    <li class="access-item"><p>1 Season</p></li>
+                                    <li class="access-item"><span class="box hd">HD</span></li>
+                                </ul>
+                                <ul class="third">
+                                    <li class="access-item">genre</li>
+                                    <li class="access-item">genre</li>
+                                    <li class="access-item">genre</li>
+                                </ul>
+                                </div>
+                            </div>
+                        <div class="movie-item"><img src="..." alt="..."></div>
+                        <div class="movie-item"><img src="..." alt="..."></div>
+                        <div class="movie-item"><img src="..." alt="..."></div>
+                        <div class="movie-item"><img src="..." alt="..."></div>
+                    </div>
+                </div> -->
+            </div>
     </div>
 
-    <div class="movie container" id="movie-section">
-        <!-- <div class="movie-section">
-                <h2 class="movie-section-heading">Trending Now
-                    <span class="explore-nudge">Explore All</span>
-                </h2>
-                <div class="movie-row">
-                    <div class="movie-item">
-                        <img src="..." alt="...">
-                        <div class="access">
-                        <ul class="first">
-                            <li class="access-item"><img src="./images/icons/play-circle.png"></li>
-                            <li class="access-item"><img src="./images/icons/add.png"></li>
-                            <li class="access-item"><img src="./images/icons/thumbs-up.png"></li>
-                            <li class="access-item"><img src="./images/icons/thumbs-down.png"></li>
-                            <li class="access-item last"><img src="./images/icons/down-button.png"></li>
-                        </ul>
-                        <ul class="second">
-                            <li class="access-item"><p class="green">93% Match</p></li>
-                            <li class="access-item"><p class="box">13+</p></li>
-                            <li class="access-item"><p>1 Season</p></li>
-                            <li class="access-item"><span class="box hd">HD</span></li>
-                        </ul>
-                        <ul class="third">
-                            <li class="access-item">genre</li>
-                            <li class="access-item">genre</li>
-                            <li class="access-item">genre</li>
-                        </ul>
-                        </div>
-                    </div>
-                <div class="movie-item"><img src="..." alt="..."></div>
-                <div class="movie-item"><img src="..." alt="..."></div>
-                <div class="movie-item"><img src="..." alt="..."></div>
-                <div class="movie-item"><img src="..." alt="..."></div>
+    <div class="my-list container">
+        <h2 class="movie-section-heading">My List</h2>
+        <div class="movie-row">
+            <div class="movie-item">
+                <img src="..." alt="...">
+                <div class="access">
+                <ul class="first">
+                    <li class="access-item"><img src="./images/icons/play-circle.png"></li>
+                    <li class="access-item"><img src="./images/icons/add.png"></li>
+                    <li class="access-item"><img src="./images/icons/thumbs-up.png"></li>
+                    <li class="access-item"><img src="./images/icons/thumbs-down.png"></li>
+                    <li class="access-item last"><img src="./images/icons/down-button.png"></li>
+                </ul>
+                <ul class="second">
+                    <li class="access-item"><p class="green">93% Match</p></li>
+                    <li class="access-item"><p class="box">13+</p></li>
+                    <li class="access-item"><p>1 Season</p></li>
+                    <li class="access-item"><span class="box hd">HD</span></li>
+                </ul>
+                <ul class="third">
+                    <li class="access-item">genre</li>
+                    <li class="access-item">genre</li>
+                    <li class="access-item">genre</li>
+                </ul>
+                </div>
             </div>
-        </div> -->
+        <div class="movie-item"><img src="..." alt="..."></div>
+        <div class="movie-item"><img src="..." alt="..."></div>
+        <div class="movie-item"><img src="..." alt="..."></div>
+        <div class="movie-item"><img src="..." alt="..."></div>
+    </div>
+    </div>
+
+    <div class="language-filter container">
+        <div>
+            <h1 class="heading">Browse by Languages</h1>
+        </div>
+        <div class="fitler-div">
+            <span>Select your preferences</span>
+            <select id="audio">
+                <option value="">Original Language</option>
+                <option value="">Dubbing</option>
+                <option value="">Subtitles</option>
+            </select>
+            <select id="subtitle">
+                <option value="">Arabic</option>
+                <option value="">Cantonese</option>
+                <option value="">Dutch</option>
+                <option value="">English</option>
+                <option value="">French</option>
+                <option value="">German</option>
+                <option value="">Hindi</option>
+                <option value="">Indonesian</option>
+                <option value="">Japanese</option>
+                <option value="">Mandarin</option>
+                <option value="">Malay</option>
+                <option value="">Polish</option>
+                <option value="">Portuguese</option>
+                <option value="">Spanish</option>
+                <option value="">Thai</option>
+                <option value="">Turkish</option>
+                <option value="">Vietnamese</option>
+            </select>
+
+            <span>Sort By</span>
+            <select id="filter">
+                <option value="">Suggestions for you</option>
+                <option value="">Year Released</option>
+                <option value="">A-Z</option>
+                <option value="">Z-A</option>
+            </select>
+        </div>
     </div>
     
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

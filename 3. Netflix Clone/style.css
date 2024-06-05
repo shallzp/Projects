@@ -90,7 +90,7 @@ body {
   width: 40px;
 }
 
-.nav-right-item img.dropdown {
+.nav-right-item img.dropdown-img {
   height:10px;
   width: 15px;
 }
@@ -128,7 +128,7 @@ img.explore-nudge {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  /* overflow-x: auto !important; */
+  overflow-x: auto !important;
   overflow-y: hidden;
   overflow: visible;
 }
@@ -261,37 +261,6 @@ img.explore-nudge {
   width: 100%;
 }
 
-/*  .language__drop__down {
-    background: transparent;
-    border: none;
-    color: white;
-  }
-  
-  .language__drop__down:focus {
-    outline: none;
-  }
-  
-  .language__drop__down option {
-    background-color: black;
-  }
-  
-  .dropdown-container {
-    border: 1px solid white;
-    padding: 0.4rem;
-    border-radius: 4px;
-    background: rgba(0, 0, 0, 0.4);
-  }
-  
-  .signin-button {
-    background-color: #dc030f;
-    border: 1px solid #dc030f;
-    color: white;
-    padding: 0.25rem 0.5rem;
-    border-radius: 4px;
-  } */
-
-
-
 
 @media (max-width:767px) {
   .nav-main{
@@ -302,8 +271,6 @@ img.explore-nudge {
         max-width: 100%;
     }
 }
-
-
 
 
 /* On hover movies */
@@ -371,4 +338,81 @@ img.explore-nudge {
 
 .third .access-item {
   padding-right: 10px;
+}
+
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  padding: 0;
+  margin: 0;
+  display: none;
+  position: absolute;
+  background-color: #141414;
+  min-width: 160px;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 1;
+}
+.dropdown-content ul {
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.dropdown-content ul .drop-options {
+  align-items: center;
+  justify-content: center;
+  color: #e5e5e5;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.kids {
+  padding-right: 10px;
+}
+
+.dropdown-content ul .drop-options:hover {
+  border: red solid 1px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+/* My list, Browse by Languages */
+.my-list, .language-filter{
+  padding-top: 100px;
+}
+
+.heading {
+  font-size: 45px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.language-filter{
+  display: grid;
+  grid-template-columns: 0.4fr 0.6fr;
+}
+
+.language-filter div {
+  padding: 0;
+  margin: 0;
+  align-items: center;
+  justify-items: center;
+}
+
+.language-filter .filter-div {
+  display: flex;
+  flex-direction: row;
 }

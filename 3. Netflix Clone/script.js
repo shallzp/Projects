@@ -4,9 +4,9 @@ const yt_api_path = (query) => `https://www.googleapis.com/youtube/v3/search?par
 
 function init() {
     fetchAndBuildAllSections(tmdb_example, genre_data);
-
     setupNavigationFiltering();
-    Hover();
+    $(".my-list").hide();
+    $(".language-filter").hide();
 }
 
 
@@ -219,16 +219,22 @@ function filterContent(category) {
         fetchAndBuildAllSections(data, genre_data);
     }
     else if(category === "my-list") {
-        clearSections();
+        $(".main").hide();
+        $(".language-filter").hide();
+        $(".my-list").show();
     }
     else if (category === "languages") {
-        // const selectedGenre = $('.genre-dropdown').val(); // Assuming you have a dropdown for genres
-        // data = tmdb_example.results.filter(movie => movie.genre === selectedGenre);
-        // fetchAndBuildAllSections(data, selectedGenre);
+        $(".main").hide();
+        $(".my-list").hide();
+        $(".language-filter").show();
     }
 }
 
 function clearSections() {
+    $(".my-list").hide();
+    $(".language-filter").hide();
+    $(".main").show();
+    
     $('.movie').empty();
     $("#banner-section").css("background-image", "none");
     $('.banner').empty();
