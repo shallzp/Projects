@@ -48,10 +48,11 @@ function fetchAndBuildAllSections(data, genreData) {
     const genres = genreData["genre"];
   
     if (Array.isArray(genres) && genres.length) {
-        fetchAndBuildTrending(tmdb_example);
+        fetchAndBuildTrending(data);
         genres.forEach(genre => {
             fetchMovie(data, genre);
         });
+        Hover();
     }
 }  
 
@@ -106,7 +107,6 @@ function buildMovieSection(dataList, category_name) {
         </div>
         `;
     }).join('');
-
 
     const movieSectionHTML = `
     <div class="movie-section">
@@ -166,11 +166,16 @@ function Hover() {
 }
   
   
-
-
 // Navigation
-function getMoviesByCategory(data, catName) {
-    return data.results.filter(movie => movie.category.includes(catName));
+function getMoviesByCategory(dataList, categoryName) {
+    filteredResult = dataList.filter(movie => {
+        if (movie.category.includes(categoryName)) {
+            return true;
+        }
+        return false;
+    });
+    filteredData = {results : filteredResult};
+    return filteredData;
 }
 
 function setActiveNavItem(activeItem) {
@@ -181,14 +186,12 @@ function setActiveNavItem(activeItem) {
 function setupNavigationFiltering() {
     const navItems = $('.nav-items');
 
-    navItems.each(function(index) {
-        if (index < 4) { // Only consider the first 4 nav items
-            $(this).click(() => {
-                const navItemCat = $(this).attr('data-category');
-                filterContent(navItemCat);
-                setActiveNavItem(this);
-            });
-        }
+    navItems.each(function() {
+        $(this).click(() => {
+            const navItemCat = $(this).attr('data-category');
+            setActiveNavItem(this);
+            filterContent(navItemCat);
+        });
     });
 }
 
@@ -196,40 +199,37 @@ function filterContent(category) {
     let data;
 
     if(category === "all"){
-        data = tmdb_example.results;
-        renderMovieSections(data, "Home");
+        data = tmdb_example;
+        clearSections();
+        fetchAndBuildAllSections(data, genre_data);
     }
     else if(category === "tv-shows") {
-        data = getMoviesByCategory(tmdb_example, "TV Show");
-        renderMovieSections(data, "TV Shows");
+        data = getMoviesByCategory(tmdb_example.results, "TV Show");
+        clearSections();
+        fetchAndBuildAllSections(data, genre_data);
     }
     else if(category === "movies") {
-        data = getMoviesByCategory(tmdb_example, "Film");
-        renderMovieSections(data, "Movies");
+        data = getMoviesByCategory(tmdb_example.results, "Film");
+        clearSections();
+        fetchAndBuildAllSections(data, genre_data);
     }
     else if(category === "news-popular") {
-        data = getMoviesByCategory(tmdb_example, "News");
-        renderMovieSections(data, "News");
+        data = getMoviesByCategory(tmdb_example.results, "News");
+        clearSections();
+        fetchAndBuildAllSections(data, genre_data);
     }
-    else if (category === "language") {
-        const selectedGenre = $('.genre-dropdown').val(); // Assuming you have a dropdown for genres
-        data = tmdb_example.results.filter(movie => movie.genre === selectedGenre);
-        renderMovieSections(data, selectedGenre);
+    else if(category === "my-list") {
+        clearSections();
     }
-}
-
-function renderMovieSections(data, cat) {
-    const movieSection = $('#movie-section');
-    movieSection.empty(); // Clear existing sections
-
-    if (Array.isArray(data) && data.length) {
-        buildMovieSection(data, cat);
-        Hover();
+    else if (category === "languages") {
+        // const selectedGenre = $('.genre-dropdown').val(); // Assuming you have a dropdown for genres
+        // data = tmdb_example.results.filter(movie => movie.genre === selectedGenre);
+        // fetchAndBuildAllSections(data, selectedGenre);
     }
 }
 
-// function updateMoviesByGenreId(genreId) {
-//     const filteredResults = tmdb_example.results.filter(movie => movie.genre_ids.includes(genreId));
-//     const updated_tmdb_example = { ...tmdb_example, results: filteredResults };
-//     return updated_tmdb_example;
-// }
+function clearSections() {
+    $('.movie').empty();
+    $("#banner-section").css("background-image", "none");
+    $('.banner').empty();
+}
