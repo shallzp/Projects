@@ -13,6 +13,339 @@ body {
   font-family: Helvetica, Arial, sans-serif;
 }
 
+/* front sign-in page */
+.front-sign-in .main{
+  background-image: url(./images/front-background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center top;
+  height: 92vh;
+  position: relative;
+}
+
+.front-nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 76.5vw;
+  margin: auto;
+  padding: 0;
+  height: 50px;
+  padding-top: 24px;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-logo {
+  padding: 0;
+  margin: 0;
+}
+
+.front-netflix-logo {
+  height: 40px;
+}
+
+.front-btns {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+.btn {
+  color: white;
+  height: 32px;
+  border-radius: 5px;
+  /* align-items: center; */
+  justify-content: center;
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Segoe UI';
+  padding: 0;
+  margin: 0;
+}
+
+.btn span {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  padding: 6.5px 16px;
+  /* position: relative; */
+}
+
+button.language {
+  background-color: transparent;
+  border: #616161 0.5px solid;
+  font-size: 16px;
+  font-weight: 400;
+  padding: 0;
+}
+
+button.language span {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  align-items: center;
+  justify-content: center;
+}
+
+button.language span svg,img {
+  vertical-align: middle;
+}
+
+button.language span svg {
+  height: 20px;
+}
+
+button.language span img {
+  height: 5.8px;
+  width: 7.5px;
+  padding: 0;
+  margin: 0;
+}
+
+.red.btn {
+  background-color: #E50914;
+}
+
+.main .box {
+  background-color: black;
+  height: 92vh;
+  width: 100%;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+}
+
+.hero {
+  height: calc(100% - 50px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  position: relative;
+  gap: 13px;
+  padding: 30px;
+}
+
+h1{
+  font-family: sans-serif;
+  font-size: 48px;
+  font-weight: 900;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h2{
+  font-family: 'Segoe UI';
+  font-size: 24px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+h3{
+  font-family: 'Segoe UI';
+  font-size: 20px;
+  font-weight: 400;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.sign-in-form {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+}
+
+.sign-in-form .email {
+  position: relative;
+  width: 370px;
+}
+
+.sign-in-form .email label {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+.sign-in-form .email input {
+  background-color: rgba(23, 23, 23, 0.2);
+  border: #616161 0.5px solid;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.3;
+  padding: 1.5rem 1rem 0.5rem;
+  width: 100%;
+}
+
+.sign-in-form .email:focus-within label {
+  font-size: 0.8rem;
+  top: 10px;
+}
+
+.sign-in-form .btn {
+  height: 56px;
+  padding: 0;
+  margin: 0;
+}
+
+.sign-in-form .btn span{
+  padding: 12px 16px;
+}
+
+.sign-in-form .red.btn {
+  font-size: 24px;
+}
+
+.sign-in-form button img {
+  height: 18px;
+}
+
+.line {
+  height: 7px;
+  width: 100vw;
+  background-color: #232323;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  max-width: 80vw;
+  margin: 72px 10vw;
+}
+
+.description {
+  color: white;
+  align-items: center;
+  justify-content: center;
+}
+
+.description h1,h2 {
+  font-family: 'Segoe UI';
+  text-align: left;
+}
+
+.tv-img img,.mobile-img img,.devices img,.kids-img img {
+  height: 381px;  
+}
+
+.faq {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 60px 10vw;
+}
+
+.faq h1 {
+  color: white;
+  margin-bottom: 20px;
+}
+
+.ques-btns {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.ques-btns button {
+  background-color: #232323;
+  width: 100%;
+  height: 85px;
+  outline: none;
+  border: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  margin-top: 8px;
+}
+
+.ques {
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+}
+
+.ans {
+  background-color: #232323;
+  width: 100%;
+  outline: none;
+  border: none;
+  align-items: center;
+  padding: 20px;
+  font-size: 24px;
+  font-weight: 400;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 1px;
+}
+
+.ans p {
+  padding: 0;
+  margin: 0;
+}
+
+.plus, .mul {
+  font-size: 65px;
+  font-weight: 100;
+  color: white;
+}
+
+.footer {
+  max-width: 80vw;
+  margin: 72px 20vw 72px 12vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.footer p {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  margin-bottom: 20px;
+  text-align: left;
+  color: #B3B3AD;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.flex-col {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.c-1, .c-2, .c-3, .c-4 {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.c-1 a, .c-1 p, .c-2 a, .c-3 a, .c-4 a {
+  color: #B3B3AD;
+  font-size: 14px;
+}
+
+/* Netflix Inside */
+.after-sign-in {
+  display: none;
+}
+
 .container {
   width: 100%;
   max-width: 1250px;
@@ -60,7 +393,7 @@ body {
 .nav-items span {
   text-decoration: none;
   margin-right: 20px;
-  color: #e5e5e5;
+  color: white;
   opacity: .83;
 }
 
@@ -128,7 +461,7 @@ img.explore-nudge {
   flex-direction: row;
   align-items: center;
   flex-wrap: nowrap;
-  overflow-x: auto !important;
+  /* overflow-x: auto !important; */
   overflow-y: hidden;
   overflow: visible;
 }
@@ -183,7 +516,7 @@ img.explore-nudge {
 .banner {
   background-repeat: no-repeat;
   background-size: cover;
-  min-height: 98vh;
+  min-height: 100vh;
   padding-top: 80px;
   position: relative;
 }
@@ -192,6 +525,7 @@ img.explore-nudge {
   display: flex;
   flex-direction: column;
   padding-top: 60px;
+  padding-bottom: 60px;
 }
 
 .banner-title {
@@ -309,7 +643,16 @@ img.explore-nudge {
   color: #e5e5e5;
 }
 
-.access-item img {
+.access-item button {
+  padding: 0;
+  margin: 0;
+  background-color: #141414;
+  border: none;
+  outline: none;
+  height: 35px;
+}
+
+.access-item button img {
   height: 35px;
 }
 
@@ -389,6 +732,14 @@ img.explore-nudge {
 /* My list, Browse by Languages */
 .my-list, .language-filter{
   padding-top: 100px;
+}
+
+.my-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  align-items: center;
+  flex-wrap: nowrap;
+  overflow: visible;
 }
 
 .heading {

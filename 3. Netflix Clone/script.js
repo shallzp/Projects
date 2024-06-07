@@ -5,6 +5,7 @@ const yt_api_path = (query) => `https://www.googleapis.com/youtube/v3/search?par
 function init() {
     fetchAndBuildAllSections(tmdb_example, genre_data);
     setupNavigationFiltering();
+    setupButton();
     $(".my-list").hide();
     $(".language-filter").hide();
 }
@@ -82,17 +83,17 @@ function buildMovieSection(dataList, category_name) {
         const genreList = filteredGenres.join(', ');
 
         return `
-        <div class="movie-item" onmouseover="searchMovieTrailer('${item.title}', 'yt${item.id}')">
+        <div class="movie-item" onmouseover="searchMovieTrailer('${item.title}', 'yt${item.id}') id="${item.id}">
             <img class="movie-item-img" src="${item.backdrop_path}" alt="${item.title}">
             <div class="yt-iframe" id="yt${item.id}"></div>
             
             <div class="access">
                 <ul class="first">
-                    <li class="access-item"><img src="./images/icons/play-circle.png"></li>
-                    <li class="access-item"><img src="./images/icons/add.png"></li>
-                    <li class="access-item"><img src="./images/icons/thumbs-up.png"></li>
-                    <li class="access-item"><img src="./images/icons/thumbs-down.png"></li>
-                    <li class="access-item last"><img src="./images/icons/down-button.png"></li>
+                    <li class="access-item" cat="play-video"><button><img src="./images/icons/play-circle.png"></button></li>
+                    <li class="access-item" cat="add-to-list"><button><img src="./images/icons/add.png"></button></li>
+                    <li class="access-item" cat="like"><button><img src="./images/icons/thumbs-up.png"></button></li>
+                    <li class="access-item" cat="dislike"><button><img src="./images/icons/thumbs-down.png"></button></li>
+                    <li class="access-item last" cat="big-screen"><button><img src="./images/icons/down-button.png"></button></li>
                 </ul>
                 <ul class="second">
                     <li class="access-item"><p class="green">93% Match</p></li>
@@ -162,6 +163,8 @@ function Hover() {
     $(".access").addClass("on-hover");
     $(".movie-item").hover(function() {
         $(this).find(".access").removeClass("on-hover");
+        //const movieId = $(this).attr("id");
+        setupButton();
     }, noHover);
 }
   
@@ -239,3 +242,77 @@ function clearSections() {
     $("#banner-section").css("background-image", "none");
     $('.banner').empty();
 }
+
+
+//Access Buttons
+// function setupButton() {
+//     const accessItems = $(".first.access-item");
+//     // const movieItem = $(".first.access-item").closest(".movie-item");
+//     const movieItem = $(".first.access-item").parent().parent();
+
+//     accessItems.each(function() {
+//         $(this).find("button").on('click', function() {
+//             const accessItemCat = $(this).parent().attr("cat");
+//             filterButtonContent(accessItemCat, movieItem);
+//         });
+//     });
+// }
+
+// function filterButtonContent(buttonCategory, movieItem) {
+//     if(buttonCategory === "play-video") {
+        
+//     } 
+//     else if(buttonCategory === "add-to-list") {
+//         addToList(movieItem);
+//         // Update button icon to tick mark
+//         $(movieItem).find(".first.access-item[cat='add-to-list'] button img").attr("src", "./images/icons/tick.png");
+//     } 
+//     else if(buttonCategory === "like") {
+        
+//     } 
+//     else if(buttonCategory === "dislike") {
+        
+//     }
+//     else if(buttonCategory === "big-screen") {
+        
+//     }
+// }
+
+
+// // My list
+// myList = {results : []};
+
+// function addToList(movieItem) {
+//     let container = $(".my-list.container");
+//     let currRow = $(container).children().last();
+
+//     // Clone the movie item to avoid direct manipulation
+//     let clonedMovieItem = $(movieItem).clone();
+//     $(currRow).append(clonedMovieItem);
+// }
+
+
+
+
+
+$(document).ready(function() {
+    $('.access-item[cat="add-to-list"] button').on('click', function(event) {
+        event.preventDefault();
+        var movieItem = $(this).closest('.movie-item');
+        var myListContainerRow = $('.my-list.container .my-row');
+
+
+
+        // Check if the movie is already in the my-list
+        if (myListContainerRow.find(movieItem).length > 0) {
+            // Remove from my-list
+            myListContainerRow.remove(movieItem);
+            $(this).html('<img src="./images/icons/add.png">'); // Change button to add icon
+        } else {
+            // Add to my-list
+            myListContainerRow.append(movieItem.clone()); // Clone the movie item to avoid direct manipulation
+            $(this).html('<img src="./images/icons/tick.png">'); // Change button to checkmark icon
+        }
+    });
+});
+
