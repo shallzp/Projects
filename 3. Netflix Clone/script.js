@@ -1,6 +1,73 @@
 const yt_api_key = "AIzaSyDE1-U79ej6aoXFkqJWRMw87WZX4JAr8gQ";
 const yt_api_path = (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${yt_api_key}`;
 
+// Front Page
+function signUpBtn() {
+    $(".front-sign-in").hide();
+    $(".sign-up").show()
+}
+
+function getStarted() {
+    var emailValue = $("#email").val().trim();
+
+    if (emailValue!== "") {
+        $(".front-sign-in").hide();
+        $(".get-started").show();
+    } 
+    else {
+        $("#email").focus();
+    }
+}
+
+function toggleDiv(divCl) {
+    $("." + divCl).toggle(250);
+
+    // $(this).find(".plus").toggle();
+    // $(this).find(".mul").toggle();
+}
+
+function validateSignUp() {
+    var isValid = true;
+
+    // Validate email or phone number
+    var enumVal = $("#email-number").val();
+    var isValidEmail = /^[\w-]+(\.[\w-]+)*@([\w-]+\.)+[a-zA-Z]{2,7}$/.test(enumVal);
+    // var isValidPhone = /^\d{10}$/.test(enumVal);
+    if (!isValidEmail) {
+        $("#email-error").show();
+        isValid = false;
+    }
+
+    // Validate password
+    var password = $('#password').val();
+    if (password.length < 4 || password.length > 60) {
+        $("#password-error").show();
+        isValid = false;
+    }
+
+    if(isValid) {
+        var user = user_data.users[0];
+        if ((enumVal === user.email || enumVal === user.username) && password === user.password) {
+            $(".before-sign-in").hide();
+            $(".sign-up").hide();
+            $(".after-sign-in").show();
+        } 
+        else {
+            $(".invalid.credential").show();
+            isValid = false;
+        }
+    }
+}
+
+function initial_setup() {
+    $(".ans").hide();
+
+    $(".sign-up").hide();
+    $(".get-started").hide();
+    $(".after-sign-in").hide();
+    
+    // $("#email").on("input", getStarted);
+}
 
 function init() {
     fetchAndBuildAllSections(tmdb_example, genre_data);
@@ -9,6 +76,34 @@ function init() {
     $(".my-list").hide();
     $(".language-filter").hide();
 }
+
+$(document).ready(() => {
+    initial_setup();
+    init();
+
+    $(window).scroll(() => {
+        if (window.scrollY > 5) {
+            $("#header").addClass("black-bg");
+        } 
+        else {
+            $("#header").removeClass("black-bg");
+        }
+    });
+});  
+
+
+// $(document).ready(() => {
+//     init();
+  
+//     $(window).scroll(() => {
+//       if (window.scrollY > 5) {
+//         $("#header").addClass("black-bg");
+//       } 
+//       else {
+//         $("#header").removeClass("black-bg");
+//       }
+//     });
+// });
 
 
 function buildBanner(movieItem) {
@@ -138,20 +233,6 @@ function searchMovieTrailer(movieName, iframeId) {
     })
     .catch(err => console.log(err));
 }
-
-
-$(document).ready(() => {
-    init();
-  
-    $(window).scroll(() => {
-      if (window.scrollY > 5) {
-        $("#header").addClass("black-bg");
-      } 
-      else {
-        $("#header").removeClass("black-bg");
-      }
-    });
-});
   
 
 //For transitiom of movie-item
