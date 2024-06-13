@@ -1,7 +1,3 @@
-const yt_api_key = "AIzaSyDE1-U79ej6aoXFkqJWRMw87WZX4JAr8gQ";
-const yt_api_path = (query) => `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${query}&key=${yt_api_key}`;
-
-
 function initial_setup() {
     $(".ans").hide();
 
@@ -14,7 +10,6 @@ function initial_setup() {
 function init() {
     fetchAndBuildAllSections(tmdb_example, genre_data);
     setupNavigationFiltering();
-    // setupButton();
 }
 
 $(document).ready(() => {
@@ -29,6 +24,16 @@ $(document).ready(() => {
             $("#header").removeClass("black-bg");
         }
     });
+
+    // $('.scroll-left').click(function() {
+    //     var movieRow = $(this).siblings('.movie-row');
+    //     movieRow.scrollLeft(movieRow.scrollLeft() - 100);
+    // });
+    
+    // $('.scroll-right').click(function() {
+    //     var movieRow = $(this).siblings('.movie-row');
+    //     movieRow.scrollLeft(movieRow.scrollLeft() + 100);
+    // });
 }); 
 
 
@@ -39,6 +44,8 @@ function signUpBtn() {
     scrollToSection($("#sign-up"));
 }
 
+
+//error
 function getStarted() {
     var emailValue = $("#email").val().trim();
 
@@ -53,14 +60,39 @@ function getStarted() {
 
 function toggleDiv(divCl) {
     $("." + divCl).toggle(250);
-
-    // $(this).find(".plus").toggle();
-    // $(this).find(".mul").toggle();
 }
 
 
 
 //Sign-in Page
+// Remember Me
+function setCookie(name, value, days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+}
+
+function getCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+function eraseCookie(name) {   
+    document.cookie = name + '=; Max-Age=-99999999;';  
+}
+
+var currentUser = null;
+
 function validateSignUp() {
     var isValid = true;
 
@@ -78,10 +110,22 @@ function validateSignUp() {
         isValid = false;
     }
 
-    if(isValid) {
-        var user = user_data.users[0];
-        if ((enumVal === user.email || enumVal === user.username) && password === user.password) {
+    if (isValid) {
+        var user = user_data.users.find(function (user) {
+            return (enumVal === user.email || enumVal === user.username) && password === user.password;
+        });
+
+        if (user) {
+            currentUser = user;
+            if ($('#remember-me').is(':checked')) {
+                setCookie('rememberMe', enumVal + ':' + password, 7);
+                console.log("Automatically logged in using cookie!");
+            } 
+            else {
+                eraseCookie('rememberMe');
+            }
             scrollToSection($("#after-sign-in"));
+            return true;
         } 
         else {
             $(".invalid.credential").show();
@@ -90,7 +134,20 @@ function validateSignUp() {
     }
 
     return isValid;
-} 
+}
+
+$(document).ready(function () {
+    var rememberMe = getCookie('rememberMe');
+    if (rememberMe) {
+        var credentials = rememberMe.split(':');
+        $('#email-number').val(credentials[0]);
+        $('#password').val(credentials[1]);
+        $('#remember-me').prop('checked', true);
+        currentUser = user_data.users.find(function (user) {
+            return (credentials[0] === user.email || credentials[0] === user.username) && credentials[1] === user.password;
+        });
+    }
+});
 
 
 
@@ -167,7 +224,7 @@ function buildMovieSection(dataList, category_name) {
         const genreList = filteredGenres.join(', ');
 
         return `
-        <div class="movie-item" onmouseover="searchMovieTrailer('${item.title}', 'yt${item.id}') id="${item.id}">
+        <div class="movie-item" onmouseover="searchMovieTrailer('${item.title}', 'yt${item.id}')" id="${item.id}">
             <img class="movie-item-img" src="${item.backdrop_path}" alt="${item.title}">
             <div class="yt-iframe" id="yt${item.id}"></div>
             
@@ -175,8 +232,8 @@ function buildMovieSection(dataList, category_name) {
                 <ul class="first">
                     <li class="access-item" cat="play-video"><button><img src="./images/icons/play-circle.png"></button></li>
                     <li class="access-item" cat="add-to-list"><button><img src="./images/icons/add.png"></button></li>
-                    <li class="access-item" cat="like"><button><img src="./images/icons/thumbs-up.png"></button></li>
-                    <li class="access-item" cat="dislike"><button><img src="./images/icons/thumbs-down.png"></button></li>
+                    <li class="access-item" cat="like"><button><img src="./images/icons/like.png"></button></li>
+                    <li class="access-item" cat="dislike"><button><img src="./images/icons/dislike.png"></button></li>
                     <li class="access-item last" cat="big-screen"><button><img src="./images/icons/down-button.png"></button></li>
                 </ul>
                 <ul class="second">
@@ -227,14 +284,14 @@ function searchMovieTrailer(movieName, iframeId) {
 //For transitiom of movie-item
 function noHover() {
     $(this).find(".access").addClass("on-hover");
+    $(this).closest('.movie-row').css('overflow', 'auto');
 }
 
 function Hover() {
     $(".access").addClass("on-hover");
     $(".movie-item").hover(function() {
         $(this).find(".access").removeClass("on-hover");
-        //const movieId = $(this).attr("id");
-        // setupButton();
+        $(this).closest('.movie-row').css('overflow', 'visible');
     }, noHover);
 }
   
@@ -250,6 +307,21 @@ function getMoviesByCategory(dataList, categoryName) {
     filteredData = {results : filteredResult};
     return filteredData;
 }
+
+function sortByReleaseDate(dataList) {
+    return dataList.sort((a, b) => {
+        let dateA = new Date(a.release_date);
+        let dateB = new Date(b.release_date);
+        return dateB - dateA;
+    });
+}
+
+function getLatestPopularShows(dataList, minResults = 20) {
+    let sortedShows = sortByReleaseDate(dataList);
+
+    return { results: sortedShows.slice(0, minResults) };
+}
+
 
 function setActiveNavItem(activeItem) {
     $('.nav-items').removeClass('active');
@@ -286,8 +358,8 @@ function filterContent(category) {
         clearSections();
         fetchAndBuildAllSections(data, genre_data);
     }
-    else if(category === "news-popular") {
-        data = getMoviesByCategory(tmdb_example.results, "News");
+    else if(category === "new-popular") {
+        data = getLatestPopularShows(tmdb_example.results);
         clearSections();
         fetchAndBuildAllSections(data, genre_data);
     }
@@ -301,6 +373,8 @@ function filterContent(category) {
         $(".my-list").hide();
         $(".language-filter").show();
     }
+
+    window.location.hash = "after-sign-in" + '?' + category ;
 }
 
 function clearSections() {
@@ -314,96 +388,123 @@ function clearSections() {
 }
 
 
-//Access Buttons
-// function setupButton() {
-//     const accessItems = $(".first.access-item");
-//     // const movieItem = $(".first.access-item").closest(".movie-item");
-//     const movieItem = $(".first.access-item").parent().parent();
+//Access Button
+$(document).ready(() => {
+    if(localStorage.getItem('user_data')) {
+        user_data = JSON.parse(localStorage.getItem('user_data'));
+    }
 
-//     accessItems.each(function() {
-//         $(this).find("button").on('click', function() {
-//             const accessItemCat = $(this).parent().attr("cat");
-//             filterButtonContent(accessItemCat, movieItem);
-//         });
-//     });
-// }
+    initializeButtons();
 
-// function filterButtonContent(buttonCategory, movieItem) {
-//     if(buttonCategory === "play-video") {
-        
-//     } 
-//     else if(buttonCategory === "add-to-list") {
-//         addToList(movieItem);
-//         // Update button icon to tick mark
-//         $(movieItem).find(".first.access-item[cat='add-to-list'] button img").attr("src", "./images/icons/tick.png");
-//     } 
-//     else if(buttonCategory === "like") {
-        
-//     } 
-//     else if(buttonCategory === "dislike") {
-        
-//     }
-//     else if(buttonCategory === "big-screen") {
-        
-//     }
-// }
+    setInterval(initializeButtons, 2500);
+})
 
+function initializeButtons() {
+    $('.movie-item').each(function() {
+        var movieItem = $(this);
+        var movieId = movieItem.attr('id');
 
-// // My list
-// myList = {results : []};
+        var myList = currentUser.watchlist;
 
-// function addToList(movieItem) {
-//     let container = $(".my-list.container");
-//     let currRow = $(container).children().last();
+        var isInMyList = false;
+        for (var i = 0; i < myList.results.length; i++) {
+            if (myList.results[i].id == movieId) {
+                isInMyList = true;
+                break;
+            }
+        }
 
-//     // Clone the movie item to avoid direct manipulation
-//     let clonedMovieItem = $(movieItem).clone();
-//     $(currRow).append(clonedMovieItem);
-// }
-
-
-
-
-
-$(document).ready(function() {
-    $('.access-item[cat="add-to-list"] button').on('click', function(event) {
-        event.preventDefault();
-        var movieItem = $(this).closest('.movie-item');
-        var myListContainerRow = $('.my-list.container .my-row');
-
-        // Check if the movie is already in the my-list
-        if (myListContainerRow.find(movieItem).length > 0) {
-            // Remove from my-list
-            myListContainerRow.remove(movieItem);
-            $(this).html('<img src="./images/icons/add.png">'); // Change button to add icon
-        } else {
-            // Add to my-list
-            myListContainerRow.append(movieItem.clone()); // Clone the movie item to avoid direct manipulation
-            $(this).html('<img src="./images/icons/tick.png">'); // Change button to checkmark icon
+        var button = movieItem.find('.access-item[cat="add-to-list"] button');
+        if (isInMyList) {
+            button.html('<img src="./images/icons/tick.png">');
+        } 
+        else {
+            button.html('<img src="./images/icons/add.png">');
         }
     });
+}
+
+//Play
+
+//Add to list
+$(document).on('click', '.access-item[cat="add-to-list"] button', function(event) {
+    event.preventDefault();
+    if (!currentUser) {
+        alert('You must be signed in to manage your watchlist.');
+        return;
+    }
+
+    var myList = currentUser.watchlist;
+
+    var movieItem = $(this).closest('.movie-item');
+    var movieId = movieItem.attr('id');
+    var myListContainerRow = $('.my-list.container .my-row');
+
+    var movieDetails;
+    for (var i = 0; i < tmdb_example.results.length; i++) {
+        if (tmdb_example.results[i].id === movieId) {
+            movieDetails = tmdb_example.results[i];
+            break;
+        }
+    }
+
+    var existingMovie = myListContainerRow.find('.movie-item[id="' + movieId + '"]');
+    if (existingMovie.length > 0) {
+        // Removing if movie exists in the my list
+        existingMovie.remove();
+        $(this).html('<img src="./images/icons/add.png">');
+
+        for (var j = 0; j < myList.results.length; j++) {
+            if (myList.results[j].id == movieId) {
+                myList.results.splice(j, 1);
+                break;
+            }
+        }
+    } else {
+        myList.results.push(movieDetails);
+
+        var newMovieItem = movieItem.clone(); // Clone the movie item
+        newMovieItem.attr('id', movieId); // Set id attribute
+        myListContainerRow.append(newMovieItem); // Append to my-list
+        $(this).html('<img src="./images/icons/tick.png">');
+    }
+
+    localStorage.setItem('user_data', JSON.stringify(user_data));
 });
 
+//thumbs up and down
 
-function scrollToSection(section) {
+//Enlarge
+
+
+//Routing change
+function scrollToSection(section, dataCategory = '') {
     if (section.length) {
         $('body > div').hide();
         section.show();
         $('html, body').animate({
             scrollTop: section.offset().top
         }, 500);
-
-        window.location.hash = section.attr('id');
+        
+        const hash = section.attr('id') + '?' + dataCategory;
+        window.location.hash = hash;
     }
 }
 
 // Scroll to the section when the hash changes
 // Not opening because of credential login
-
 // $(window).on('hashchange', function() {
-//     const hash = window.location.hash;
-//     if (hash) {
-//         const section = $(hash);
-//         scrollToSection(section);
+//     const { section, dataCategory } = getSectionFromHash();
+//     if (section.length) {
+//         scrollToSection(section, dataCategory);
 //     }
 // });
+
+function getSectionFromHash() {
+    const hash = window.location.hash;
+    if (!hash) return { section: $(), dataCategory: '' };
+
+    const [sectionId, dataCategory] = hash.slice(1).split('?');
+    const section = $('#' + sectionId);
+    return { section, dataCategory };
+}
