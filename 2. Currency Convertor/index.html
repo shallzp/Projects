@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+    <script src="https://kit.fontawesome.com/b8339bba84.js" crossorigin="anonymous"></script>
+</head>
+<link rel="stylesheet" href="style.css">
+<body>
+
+    <div id="convertor">
+        <h2>Currency Converter</h2>
+        <form>
+            <div class="amount">
+                <p>Enter Amount</p>
+                <input value="1" type="text" />
+            </div>
+            <div class="dropdown">
+                <div id="from">
+                    <p>From</p>
+                    <div id="selector">
+                        <img src="https://flagsapi.com/US/shiny/64.png">
+                        <select name="from"></select>
+                    </div>
+                </div>
+                <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                <div id="to">
+                    <p>To</p>
+                    <div id="selector">
+                        <img src="https://flagsapi.com/IN/shiny/64.png">
+                        <select name="to"></select>
+                    </div>
+                </div>
+            </div>
+            <div id="msg"></div>
+            <button id="convert">Convert</button>
+        </form>
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script type="Text/JavaScript" src="codes.js"></script>
+    <script type="Text/JavaScript" src="index.js"></script>
+</body>
+</html>
