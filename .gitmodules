@@ -1,0 +1,6 @@
+[submodule "Whatsapp-Clone"]
+	path = Whatsapp-Clone
+	url = https://github.com/shallzp/Whatsapp-Clone.git
+[submodule "Netflix-Clone"]
+	path = Netflix-Clone
+	url = https://github.com/shallzp/Netflix-Clone.git
